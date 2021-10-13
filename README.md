@@ -21,3 +21,4 @@ ionic capacitor open android
 
 # TODO
 - ionic serveのプロジェクト名を変更する
+- proxy conf jsonの設定
