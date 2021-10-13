@@ -18,3 +18,6 @@ ionic capacitor open ios
 # Androidアプリとして実行
 ionic capacitor open android
 ```
+
+# TODO
+- ionic serveのプロジェクト名を変更する
