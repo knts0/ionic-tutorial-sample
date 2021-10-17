@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { modalController } from '@ionic/core';
+import { ModalPageComponent } from '../modal-page/modal-page.component';
 import { DataService, Message } from '../services/data.service';
 
 @Component({
@@ -7,7 +10,10 @@ import { DataService, Message } from '../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private data: DataService) {}
+  constructor(
+    private data: DataService,
+    public mocalController: ModalController,
+  ) {}
 
   refresh(ev) {
     setTimeout(() => {
@@ -17,6 +23,14 @@ export class HomePage {
 
   getMessages(): Message[] {
     return this.data.getMessages();
+  }
+
+  async onClickAddButton() {
+    // todo
+    const modal = await this.mocalController.create({
+      component: ModalPageComponent,
+    })
+    return await modal.present()
   }
 
 }
