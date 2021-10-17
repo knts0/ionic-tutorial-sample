@@ -23,13 +23,13 @@
     <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
   </ion-list>
 
-  // vertical top or center or bottom
-  // horizontal start or center or end
-  // slot: fixed (=fixed if scrolled)
-  // edge: have no padding to the edge
+  <!-- vertical top or center or bottom -->
+  <!-- horizontal start or center or end -->
+  <!-- slot: fixed (=fixed if scrolled) -->
+  <!-- edge: have no padding to the edge -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    // fab buttonはmin sizeもあり
-    <ion-fab-button>
+    <!-- fab buttonはmin sizeもあり -->
+    <ion-fab-button (click)="onClickAddButton()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
