@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public mocalController: ModalController,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onClose() {
+    this.mocalController.dismiss();
   }
 
 }
