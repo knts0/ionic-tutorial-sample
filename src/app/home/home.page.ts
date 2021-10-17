@@ -29,6 +29,9 @@ export class HomePage {
     // todo
     const modal = await this.mocalController.create({
       component: ModalPageComponent,
+      // componentPropsでデータを渡せる
+      // cssClassでカスタムCSSを定義
+      // swipeToCloseでスワイプによるcloseを可能にする
     })
     return await modal.present()
   }
