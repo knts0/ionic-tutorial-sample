@@ -3,17 +3,30 @@
     <ion-icon name="close-outline"></ion-icon>
   </ion-button>
 </div>
-<div class="modal-content">
+<ion-content class="modal-content">
   <p>modal-page works!</p>
   <ion-item>
     <ion-label>Title</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-button (click)="addPhotoToGallery()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-button>
-  </ion-item>
-</div>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size="6"
+        *ngFor="let photo of photoService.photos; index as position">
+        <ion-img [src]="photo.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-button (click)="addPhotoToGallery()">
+            <ion-icon name="camera"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
 
